@@ -1,9 +1,7 @@
-exports.post = (request, reply) => {
-    console.log('--------------');
-    console.log('register movie');
-    console.log(request.body);
-    console.log('--------------');
-    return { message: 'register movie' };
+const movieService = require('../../application/services/movie');
+
+exports.post = async (request, reply) => {
+    return await movieService.register(request.body);
 }
 
 exports.get = (request, reply) => {
